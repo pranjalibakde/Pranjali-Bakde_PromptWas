@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Blind Spot | AI Decision Reflection</title>
+
+  <!-- Flask CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a class="brand" href="#">◉ THE BLIND SPOT</a>
+    <span class="tag">AI DECISION REFLECTION</span>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <p class="eyebrow">THINK BEYOND THE OBVIOUS</p>
+
+      <h1>
+        What might you be<br>
+        <span>missing?</span>
+      </h1>
+
+      <p class="subtitle">
+        Every decision has a blind spot. Explore your assumptions,
+        uncover overlooked factors, and think more critically.
+      </p>
+    </section>
+
+
+    <!-- DECISION FORM -->
+    <section class="panel">
+
+      <h2>Let's examine your decision.</h2>
+
+      <p class="muted">
+        Share your context. Question your reasoning.
+      </p>
+
+      <form id="decisionForm">
+
+        <label for="decision">
+          What's the decision you're facing?
+        </label>
+
+        <textarea
+          id="decision"
+          required
+          minlength="10"
+          placeholder="e.g. Should I accept a 6-month internship?"
+        ></textarea>
+
+
+        <label for="reasons">
+          Why are you leaning this way?
+        </label>
+
+        <textarea
+          id="reasons"
+          required
+          placeholder="List your main reasons..."
+        ></textarea>
+
+
+        <label for="concerns">
+          What worries you? (Optional)
+        </label>
+
+        <textarea
+          id="concerns"
+          placeholder="What could go wrong? What are you unsure about?"
+        ></textarea>
+
+
+        <label for="priority">
+          What matters most to you?
+        </label>
+
+        <select id="priority">
+
+          <option>Long-term growth</option>
+
+          <option>Learning and skills</option>
+
+          <option>Financial stability</option>
+
+          <option>Time and wellbeing</option>
+
+          <option>Relationships and responsibilities</option>
+
+          <option>Other priorities</option>
+
+        </select>
+
+
+        <button id="analyzeBtn" type="submit">
+          Analyze my blind spots ↗
+        </button>
+
+        <p class="privacy">
+          Your decision is yours. AI helps you reflect, not decide.
+        </p>
+
+      </form>
+
+    </section>
+
+
+    <!-- AI RESULT -->
+    <section
+      id="results"
+      class="panel hidden"
+      aria-live="polite"
+    >
+
+      <p class="eyebrow">
+        YOUR REFLECTION REPORT
+      </p>
+
+      <h2>
+        Your Blind Spot Report
+      </h2>
+
+      <div id="report"></div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+      THE BLIND SPOT · Question assumptions. Discover perspective.
+    </footer>
+
+  </main>
+
+
+  <!-- Flask JavaScript -->
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+
+</body>
+</html>
